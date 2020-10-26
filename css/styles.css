@@ -1,0 +1,14 @@
+/*
+header font: 'Chivo', sans-serif;
+body font: 'Overpass', sans-serif;
+accent color: #8fc0a9; - Cambridge Blue
+ */
+
+.top-header {
+  font-family: 'Chivo', sans-serif;
+  color: whitesmoke;
+  background-color: #8fc0a9;
+  font-size: 1.5rem;
+  margin: 0 auto;
+  padding: 1rem;
+}
