@@ -1,0 +1,76 @@
+input:not(#save-button) {
+  width: 100%;
+  border-radius: 4px;
+  padding: 0.6rem;
+  border: 1px solid silver;
+}
+
+textarea {
+  width: 100%;
+  height: 10rem;
+  border: 1px solid silver;
+  font-family: 'Overpass', sans-serif;
+  font-size: 1rem;
+}
+
+label {
+  display: block;
+  padding-bottom: 0.5rem;
+  padding-top: 0.8rem;
+}
+
+input[type="text"] {
+  font-family: 'Overpass', sans-serif;
+}
+
+.button-container {
+  padding-top: 0.3rem;
+  text-align: right;
+}
+
+.top-header {
+  font-family: 'Chivo', sans-serif;
+  color: whitesmoke;
+  background-color: #8fc0a9;
+  font-size: 1.5rem;
+  margin: 0;
+  padding: 0.8rem;
+}
+
+.edit-profile-header {
+  font-family: 'Chivo', sans-serif;
+  font-size: 1.4rem;
+  padding-left: 0.9rem;
+}
+
+.avatar-placeholder {
+  width: 100%;
+  height: 24rem;
+  object-fit: contain;
+}
+
+.forms {
+  font-weight: bold;
+  font-family: 'Chivo', sans-serif;
+  font-size: 0.9rem;
+}
+
+.forms-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  padding-bottom: 2rem;
+}
+
+#save-button {
+  background-color: #8fc0a9;
+  color: whitesmoke;
+  padding: 10px 20px;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+}
+
+#save-button:hover {
+  background-color: #b4d6e4;
+}
