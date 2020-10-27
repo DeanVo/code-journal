@@ -12,24 +12,24 @@
   <link rel="stylesheet" href="css/reset.css">
   <link rel="stylesheet" href="css/layout.css">
   <link rel="stylesheet" href="css/styles.css">
-  <!-- heading: Chivo, body: Overpass -->
   <link href="https://fonts.googleapis.com/css2?family=Chivo&family=Overpass:wght@300&display=swap" rel="stylesheet">
 </head>
 <body>
   <header>
-    <h1 class="top-header">Code Journal</h1>
   </header>
   <main>
     <div data-view="edit-profile"></div>
     <div class="container">
+      <h1 class="top-header">Code Journal</h1>
       <h1 class="edit-profile-header">Edit Profile</h1>
-
+      <form>
       <div class="row">
         <div class="column-half">
           <div class="image-container">
             <img class="avatar-placeholder" src="images/placeholder-image-square.jpg" alt="placeholder">
           </div>
         </div>
+
         <div class="column-half forms-container">
           <div class="forms"><label for="avatar-url">Avatar URL</label>
           <input type="text" name="avatarUrl" id="avatar-url" required></div>
@@ -47,14 +47,15 @@
 
         <div class="column-full">
           <div class="forms"><label for="bio">Bio</label>
-          <textarea id="bio" name="bio" required></textarea></div>
+          <textarea id="bio" name="bio" required></textarea>
+          </div>
 
           <div class="button-container">
-            <button id="save-button" type="submit">SAVE</button>
+            <input id="save-button" type="submit" value="SAVE">
           </div>
         </div>
       </div>
-
+    </form>
     </div>
 
 
