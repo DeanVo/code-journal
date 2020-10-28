@@ -35,7 +35,6 @@ function renderProfileData() {
   var newProfile = document.createElement('div');
 
   var newContainer = document.createElement('div');
-  var newTopHeader = document.createElement('h1');
   var newProfileHeader = document.createElement('h1');
   var newRow = document.createElement('div');
   var newColumn = document.createElement('div');
@@ -52,9 +51,9 @@ function renderProfileData() {
   var newProfileBioContainer = document.createElement('div');
   var newBio = document.createElement('div');
   var newButton = document.createElement('a');
+  var newProfileButton = document.createElement('a');
 
   newContainer.setAttribute('class', 'container');
-  newTopHeader.setAttribute('class', 'top-header');
   newProfileHeader.setAttribute('class', 'profile-header');
   newRow.setAttribute('class', 'row');
   newColumn.setAttribute('class', 'column-half');
@@ -75,8 +74,9 @@ function renderProfileData() {
   newButton.setAttribute('class', 'edit-button');
   newButton.setAttribute('href', '#');
   newButton.setAttribute('data-view', 'edit-profile');
+  newProfileButton.setAttribute('href', '#');
+  newProfileButton.setAttribute('data-view', 'profile');
 
-  newTopHeader.textContent = 'Code Journal';
   newProfileHeader.textContent = data.profile.fullName;
   newUsername.textContent = data.profile.username;
   newLocation.textContent = data.profile.location;
@@ -85,7 +85,6 @@ function renderProfileData() {
 
   newProfile.appendChild(newContainer);
 
-  newContainer.appendChild(newTopHeader);
   newContainer.appendChild(newProfileHeader);
   newContainer.appendChild(newRow);
 
@@ -152,7 +151,7 @@ document.addEventListener('DOMContentLoaded', function (event) {
 
 function clickEdit() {
   if (event.target.tagName === 'A') {
-    viewSwapper('edit-profile');
+    viewSwapper(event.target.getAttribute('data-view'));
   } else {
     return false;
   }
