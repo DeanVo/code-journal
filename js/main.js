@@ -101,19 +101,22 @@ function renderProfileData() {
   return newProfile;
 }
 
-renderProfileData();
-
 var viewList = document.querySelectorAll('div[data-view]');
+var profileDiv = document.querySelector('div[data-view="profile"');
 
 function viewSwapper(dataView) {
   for (var i = 0; i < viewList.length; i++) {
-    if (viewList[i].getAttribute('data-view') === dataView) {
-      viewList[i].className = '';
-    } else {
+    if (viewList[i].getAttribute('data-view') !== dataView) {
       viewList[i].className = 'hidden';
+    } else {
+      viewList[i].className = '';
     }
   }
   data.view = dataView;
+  if (data.view === 'profile') {
+    profileDiv.innerHTML = '';
+    profileDiv.appendChild(renderProfileData(data));
+  }
 }
 
-viewSwapper('profile');
+viewSwapper('edit-profile');

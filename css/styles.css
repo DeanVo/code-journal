@@ -52,7 +52,7 @@ input[type="text"] {
 .avatar {
   width: 100%;
   height: 24rem;
-  object-fit: contain;
+  object-fit: cover;
 }
 
 .forms {
