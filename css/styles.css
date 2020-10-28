@@ -23,6 +23,10 @@ input[type="text"] {
   font-family: 'Overpass', sans-serif;
 }
 
+.hidden {
+  display: none;
+}
+
 .button-container {
   padding-top: 0.3rem;
   text-align: right;
@@ -37,16 +41,18 @@ input[type="text"] {
   padding: 0.8rem;
 }
 
-.edit-profile-header {
+.edit-profile-header,
+.profile-header {
   font-family: 'Chivo', sans-serif;
   font-size: 1.4rem;
-  padding-left: 0.9rem;
+  padding-left: 0.1rem;
 }
 
-.avatar-placeholder {
+.avatar-placeholder,
+.avatar {
   width: 100%;
-  height: 24rem;
-  object-fit: contain;
+  height: 23rem;
+  object-fit: cover;
 }
 
 .forms {
@@ -73,4 +79,32 @@ input[type="text"] {
 
 #save-button:hover {
   background-color: #b4d6e4;
+}
+
+.fas {
+  color: #8fc0a9;
+}
+
+.profile-container {
+  padding-top: 0.2rem;
+  font-family: 'Overpass', sans-serif;
+}
+
+.profile-name-container,
+.profile-location-container {
+  display: flex;
+  padding: 0.5rem;
+}
+
+.profile-name {
+  padding-left: 0.7rem;
+}
+
+.profile-location {
+  padding-left: 0.9rem;
+}
+
+.profile-bio-container {
+  padding: 0.5rem;
+  line-height: 1.4;
 }
