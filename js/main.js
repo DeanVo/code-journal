@@ -119,3 +119,17 @@ function viewSwapper(dataView) {
     profileDiv.appendChild(renderProfileData(data));
   }
 }
+
+document.addEventListener('DOMContentLoaded', function (event) {
+  var previousProfile = localStorage.getItem('code-journal');
+
+  if (previousProfile !== null) {
+    data = JSON.parse(previousProfile);
+  }
+
+  if (data.profile.username === '') {
+    viewSwapper('edit-profile');
+  } else {
+    viewSwapper(data.view);
+  }
+});
