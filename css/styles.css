@@ -23,7 +23,7 @@ input[type="text"] {
   font-family: 'Overpass', sans-serif;
 }
 
-div[data-view="edit-profile"] {
+.hidden {
   display: none;
 }
 

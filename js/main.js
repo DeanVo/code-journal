@@ -63,7 +63,7 @@ function renderProfileData() {
   newColumn2.setAttribute('class', 'column-half');
   newProfileContainer.setAttribute('class', 'profile-container');
   newProfileName.setAttribute('class', 'profile-name-container');
-  newIconName.setAttribute('i', 'fas fa-user');
+  newIconName.setAttribute('class', 'fas fa-user');
   newUsername.setAttribute('class', 'profile-name');
   newProfileLocationContainer.setAttribute('class', 'profile-location-container');
   newIconLocation.setAttribute('class', 'fas fa-map-marker-alt');
@@ -102,3 +102,18 @@ function renderProfileData() {
 }
 
 renderProfileData();
+
+var viewList = document.querySelectorAll('div[data-view]');
+
+function viewSwapper(dataView) {
+  for (var i = 0; i < viewList.length; i++) {
+    if (viewList[i].getAttribute('data-view') === dataView) {
+      viewList[i].className = '';
+    } else {
+      viewList[i].className = 'hidden';
+    }
+  }
+  data.view = dataView;
+}
+
+viewSwapper('profile');
