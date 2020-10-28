@@ -149,3 +149,13 @@ document.addEventListener('DOMContentLoaded', function (event) {
     viewSwapper(data.view);
   }
 });
+
+function clickEdit() {
+  if (event.target.tagName === 'A') {
+    viewSwapper('edit-profile');
+  } else {
+    return false;
+  }
+}
+
+document.addEventListener('click', clickEdit);
