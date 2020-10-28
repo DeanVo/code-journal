@@ -51,6 +51,7 @@ function renderProfileData() {
   var newLocation = document.createElement('div');
   var newProfileBioContainer = document.createElement('div');
   var newBio = document.createElement('div');
+  var newButton = document.createElement('a');
 
   newContainer.setAttribute('class', 'container');
   newTopHeader.setAttribute('class', 'top-header');
@@ -71,12 +72,16 @@ function renderProfileData() {
   newLocation.setAttribute('class', 'profile-location');
   newProfileBioContainer.setAttribute('class', 'profile-bio-container');
   newBio.setAttribute('class', 'profile-bio');
+  newButton.setAttribute('class', 'edit-button');
+  newButton.setAttribute('href', '#');
+  newButton.setAttribute('data-view', 'edit-profile');
 
   newTopHeader.textContent = 'Code Journal';
   newProfileHeader.textContent = data.profile.fullName;
   newUsername.textContent = data.profile.username;
   newLocation.textContent = data.profile.location;
   newBio.textContent = data.profile.bio;
+  newButton.textContent = 'EDIT';
 
   newProfile.appendChild(newContainer);
 
@@ -98,6 +103,8 @@ function renderProfileData() {
   newProfileLocationContainer.appendChild(newLocation);
   newProfileContainer.appendChild(newProfileBioContainer);
   newProfileBioContainer.appendChild(newBio);
+
+  newProfileContainer.appendChild(newButton);
 
   return newProfile;
 }

@@ -108,3 +108,17 @@ input[type="text"] {
   padding: 0.5rem;
   line-height: 1.4;
 }
+
+.edit-button {
+  background-color: #8fc0a9;
+  color: white;
+  padding: 0 1rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.3rem;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.edit-button:hover {
+  background-color: #b4d6e4;
+}
