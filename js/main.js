@@ -118,6 +118,15 @@ function viewSwapper(dataView) {
     profileDiv.innerHTML = '';
     profileDiv.appendChild(renderProfileData(data));
   }
+
+  if (data.view === 'edit-profile') {
+    elImage.src = data.profile.avatarUrl;
+    elInputs[0].value = data.profile.avatarUrl;
+    elInputs[1].value = data.profile.username;
+    elInputs[2].value = data.profile.fullName;
+    elInputs[3].value = data.profile.location;
+    elBio.value = data.profile.bio;
+  }
 }
 
 document.addEventListener('DOMContentLoaded', function (event) {
