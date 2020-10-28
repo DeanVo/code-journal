@@ -21,6 +21,7 @@ function saveButton() {
 
   elForm.reset();
   elImage.src = 'images/placeholder-image-square.jpg';
+  viewSwapper('profile');
 }
 
 elForm.addEventListener('submit', saveButton);
@@ -118,5 +119,3 @@ function viewSwapper(dataView) {
     profileDiv.appendChild(renderProfileData(data));
   }
 }
-
-viewSwapper('edit-profile');
