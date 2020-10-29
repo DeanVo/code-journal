@@ -44,9 +44,10 @@ function entriesSaveButton() {
   entriesObject.photoUrl = elInputs[5].value;
   entriesObject.title = elInputs[6].value;
   entriesObject.notes = elNotes.value;
+
   data.entries.push(entriesObject);
-  elPhotoUrl.src = 'images/placeholder-image-square.jpg';
   elEntriesForm.reset();
+  elPhotoUrl.src = 'images/placeholder-image-square.jpg';
   viewSwapper('entries');
 
 }
