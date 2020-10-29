@@ -154,13 +154,14 @@ document.addEventListener('DOMContentLoaded', function (event) {
 });
 
 function clickEdit() {
-  if (event.target.tagName === 'A') {
-    viewSwapper(event.target.getAttribute('data-view'));
-  } else {
-    return false;
+  if (event.target.tagName !== 'A') {
+    return;
   }
+
   if (data.profile.username === '') {
     viewSwapper('edit-profile');
+  } else {
+    viewSwapper(event.target.getAttribute('data-view'));
   }
 }
 
