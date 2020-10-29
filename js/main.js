@@ -36,9 +36,8 @@ function saveButton() {
 
 elProfileForm.addEventListener('submit', saveButton);
 
-var entriesObject = {};
-
 function entriesSaveButton() {
+  var entriesObject = {};
   event.preventDefault();
 
   entriesObject.photoUrl = elInputs[5].value;
