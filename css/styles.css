@@ -95,7 +95,8 @@ header {
   outline: none;
 }
 
-#save-button:hover {
+#save-button:hover,
+#entries-save-button:hover {
   background-color: #b4d6e4;
 }
 

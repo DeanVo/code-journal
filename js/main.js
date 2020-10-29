@@ -1,10 +1,12 @@
 var elAvatarInput = document.querySelector('#avatar-url');
 var elInputs = document.querySelectorAll('input');
 var elBio = document.querySelector('textarea');
-var elForm = document.querySelector('form');
+var elProfileForm = document.querySelector('#profile-form');
+var elEntriesForm = document.querySelector('#entries-form');
 var elImage = document.querySelector('.avatar-placeholder');
 var elPhotoUrl = document.querySelector('.entries-placeholder');
 var elPhotoUrlInput = document.querySelector('#photo-url');
+var elNotes = document.querySelector('#notes');
 
 function avatarInput() {
   elImage.src = elAvatarInput.value;
@@ -27,12 +29,29 @@ function saveButton() {
   data.profile.location = elInputs[3].value;
   data.profile.bio = elBio.value;
 
-  elForm.reset();
+  elProfileForm.reset();
   elImage.src = 'images/placeholder-image-square.jpg';
   viewSwapper('profile');
 }
 
-elForm.addEventListener('submit', saveButton);
+elProfileForm.addEventListener('submit', saveButton);
+
+var entriesObject = {};
+
+function entriesSaveButton() {
+  event.preventDefault();
+
+  entriesObject.photoUrl = elInputs[5].value;
+  entriesObject.title = elInputs[6].value;
+  entriesObject.notes = elNotes.value;
+  data.entries.push(entriesObject);
+  elPhotoUrl.src = 'images/placeholder-image-square.jpg';
+  elEntriesForm.reset();
+  viewSwapper('entries');
+
+}
+
+elEntriesForm.addEventListener('submit', entriesSaveButton);
 
 window.addEventListener('beforeunload', function (event) {
   var dataJSON = JSON.stringify(data);
