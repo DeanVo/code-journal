@@ -133,6 +133,10 @@ function viewSwapper(dataView) {
     elInputs[3].value = data.profile.location;
     elBio.value = data.profile.bio;
   }
+
+  if (data.profile.avatarUrl === '') {
+    elImage.src = 'images/placeholder-image-square.jpg';
+  }
 }
 
 document.addEventListener('DOMContentLoaded', function (event) {
@@ -154,6 +158,9 @@ function clickEdit() {
     viewSwapper(event.target.getAttribute('data-view'));
   } else {
     return false;
+  }
+  if (data.profile.username === '') {
+    viewSwapper('edit-profile');
   }
 }
 
