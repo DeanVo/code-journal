@@ -18,7 +18,7 @@
   <header class="row">
     <h1 class="top-header">Code Journal</h1>
     <a href="#" data-view="profile" class="top-header profile-link">Profile</a>
-    <a href="#" class="top-header profile-link">Entries</a>
+    <a href="#" data-view="entries" class="top-header profile-link">Entries</a>
   </header>
   <main>
     <div data-view="edit-profile" class="hidden">
@@ -62,7 +62,14 @@
     </div>
 
     <div data-view="profile"></div>
-    <div data-view="entries"></div>
+    <div data-view="entries">
+      <div class="container">
+        <div class="row entries-container">
+          <h1 class="entries-title">Entries</h1>
+          <a href="#" data-view="create-entry" class="new-entry-link">NEW</a>
+        </div>
+      </div>
+    </div>
     <div data-view="create-entry">
 
     <div class="container">

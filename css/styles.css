@@ -140,3 +140,22 @@ header {
 .edit-button:hover {
   background-color: #b4d6e4;
 }
+
+.entries-container {
+  font-family: 'Chivo', sans-serif;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.new-entry-link {
+  background-color: #8fc0a9;
+  color: white;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+}
+
+.new-entry-link:hover {
+  background-color: #b4d6e4;
+}
