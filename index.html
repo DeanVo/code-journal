@@ -18,12 +18,13 @@
   <header class="row">
     <h1 class="top-header">Code Journal</h1>
     <a href="#" data-view="profile" class="top-header profile-link">Profile</a>
+    <a href="#" data-view="entries" class="top-header profile-link">Entries</a>
   </header>
   <main>
     <div data-view="edit-profile" class="hidden">
     <div class="container">
       <h1 class="edit-profile-header">Edit Profile</h1>
-      <form>
+      <form id="profile-form">
       <div class="row">
         <div class="column-half">
           <div class="image-container">
@@ -61,6 +62,52 @@
     </div>
 
     <div data-view="profile"></div>
+    <div data-view="entries">
+      <div class="container">
+        <div class="row entries-container">
+          <h1 class="entries-title">Entries</h1>
+          <a href="#" data-view="create-entry" class="new-entry-link">NEW</a>
+        </div>
+      </div>
+    </div>
+    <div data-view="create-entry">
+
+    <div class="container">
+      <h1 class="entries-header">Create Entry</h1>
+      <form id="entries-form">
+        <div class="row">
+
+          <div class="column-half">
+            <div class="image-container">
+              <img class="entries-placeholder" src="images/placeholder-image-square.jpg" alt="placeholder">
+            </div>
+          </div>
+
+          <div class="column-half">
+            <div class="forms"><label for="photo-url">Photo URL</label>
+            <input type="text" name="photoUrl" id="photo-url" required></div>
+
+            <div class="forms"><label for="title">Title</label>
+            <input type="text" name="title" id="title" required></div>
+          </div>
+
+          <div class="column-full">
+            <div class="forms"><label for="notes">Notes</label>
+            <textarea id="notes" name="notes" required></textarea>
+            </div>
+
+            <div class="button-container">
+              <input id="entries-save-button" type="submit" value="SAVE">
+            </div>
+          </div>
+
+        </div>
+      </form>
+    </div>
+
+
+
+    </div>
 
 
 

@@ -1,4 +1,4 @@
-input:not(#save-button) {
+input:not(#save-button):not(#entries-save-button) {
   width: 100%;
   border-radius: 4px;
   padding: 0.6rem;
@@ -57,14 +57,16 @@ header {
 }
 
 .edit-profile-header,
-.profile-header {
+.profile-header,
+.entries-header {
   font-family: 'Chivo', sans-serif;
   font-size: 1.4rem;
   padding-left: 0.1rem;
 }
 
 .avatar-placeholder,
-.avatar {
+.avatar,
+.entries-placeholder {
   width: 100%;
   height: 23rem;
   object-fit: contain;
@@ -83,7 +85,8 @@ header {
   padding-bottom: 2rem;
 }
 
-#save-button {
+#save-button,
+#entries-save-button {
   background-color: #8fc0a9;
   color: whitesmoke;
   padding: 10px 20px;
@@ -92,7 +95,8 @@ header {
   outline: none;
 }
 
-#save-button:hover {
+#save-button:hover,
+#entries-save-button:hover {
   background-color: #b4d6e4;
 }
 
@@ -135,5 +139,24 @@ header {
 }
 
 .edit-button:hover {
+  background-color: #b4d6e4;
+}
+
+.entries-container {
+  font-family: 'Chivo', sans-serif;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.new-entry-link {
+  background-color: #8fc0a9;
+  color: white;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+}
+
+.new-entry-link:hover {
   background-color: #b4d6e4;
 }
