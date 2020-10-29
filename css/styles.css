@@ -23,6 +23,10 @@ input[type="text"] {
   font-family: 'Overpass', sans-serif;
 }
 
+header {
+  background-color: #8fc0a9;
+}
+
 .hidden {
   display: none;
 }
@@ -41,6 +45,17 @@ input[type="text"] {
   padding: 0.8rem;
 }
 
+.profile-link {
+  font-family: 'Chivo', sans-serif;
+  color: whitesmoke;
+  font-size: 1.2rem;
+  text-decoration: none;
+  font-weight: normal;
+  align-self: center;
+  position: relative;
+  top: 0.1rem;
+}
+
 .edit-profile-header,
 .profile-header {
   font-family: 'Chivo', sans-serif;
@@ -52,7 +67,7 @@ input[type="text"] {
 .avatar {
   width: 100%;
   height: 23rem;
-  object-fit: cover;
+  object-fit: contain;
 }
 
 .forms {
@@ -107,4 +122,18 @@ input[type="text"] {
 .profile-bio-container {
   padding: 0.5rem;
   line-height: 1.4;
+}
+
+.edit-button {
+  background-color: #8fc0a9;
+  color: white;
+  padding: 0 1rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.3rem;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.edit-button:hover {
+  background-color: #b4d6e4;
 }
