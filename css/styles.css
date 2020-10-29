@@ -67,7 +67,7 @@ header {
 .avatar {
   width: 100%;
   height: 23rem;
-  object-fit: cover;
+  object-fit: contain;
 }
 
 .forms {
