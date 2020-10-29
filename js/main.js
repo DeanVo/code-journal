@@ -3,12 +3,20 @@ var elInputs = document.querySelectorAll('input');
 var elBio = document.querySelector('textarea');
 var elForm = document.querySelector('form');
 var elImage = document.querySelector('.avatar-placeholder');
+var elPhotoUrl = document.querySelector('.entries-placeholder');
+var elPhotoUrlInput = document.querySelector('#photo-url');
 
 function avatarInput() {
   elImage.src = elAvatarInput.value;
 }
 
 elAvatarInput.addEventListener('input', avatarInput);
+
+function photoUrlInput() {
+  elPhotoUrl.src = elPhotoUrlInput.value;
+}
+
+elPhotoUrlInput.addEventListener('input', photoUrlInput);
 
 function saveButton() {
   event.preventDefault();
