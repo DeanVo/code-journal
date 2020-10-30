@@ -135,6 +135,41 @@ function renderProfileData() {
   return newProfile;
 }
 
+function renderEntriesData() {
+  var entriesList = document.createElement('li');
+  var entriesContainer = document.createElement('div');
+  var entriesRow = document.createElement('div');
+  var entriesColumnHalf = document.createElement('div');
+  var entriesImage = document.createElement('img');
+  var entriesColumnHalf2 = document.createElement('div');
+  var entriesHeader = document.createElement('h1');
+  var entriesCaption = document.createElement('div');
+
+  entriesContainer.setAttribute('class', 'entries-container');
+  entriesRow.setAttribute('class', 'row');
+  entriesColumnHalf.setAttribute('class', 'column-half');
+  entriesImage.setAttribute('class', 'entries-placeholder');
+  entriesImage.setAttribute('src', data.entries[0].photoUrl);
+  entriesImage.setAttribute('alt', 'placeholder');
+  entriesColumnHalf2.setAttribute('class', 'column-half');
+
+  entriesHeader.textContent = data.entries[0].title;
+  entriesCaption.textContent = data.entries[0].notes;
+
+  entriesList.appendChild(entriesContainer);
+  entriesContainer.appendChild(entriesRow);
+  entriesRow.appendChild(entriesColumnHalf);
+  entriesRow.appendChild(entriesColumnHalf2);
+
+  entriesColumnHalf.appendChild(entriesImage);
+  entriesColumnHalf2.appendChild(entriesHeader);
+  entriesColumnHalf2.appendChild(entriesCaption);
+
+  return entriesList;
+}
+
+renderEntriesData();
+
 var viewList = document.querySelectorAll('div[data-view]');
 var profileDiv = document.querySelector('div[data-view="profile"');
 
