@@ -27,6 +27,15 @@ header {
   background-color: #8fc0a9;
 }
 
+ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+li:not(:first-child) {
+  padding-top: 1.9rem;
+}
+
 .hidden {
   display: none;
 }
