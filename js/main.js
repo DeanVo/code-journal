@@ -163,14 +163,6 @@ function viewSwapper(dataView) {
     elBio.value = data.profile.bio;
   }
 
-  // if (data.view === 'create-entry') {
-  //   if (data.entries.length === 0) {
-  //     $entriesList.appendChild(renderEntriesData(data.entries[0]));
-  //   } else {
-  //     $entriesList.prepend(renderEntriesData(data.entries[data.entries.length - 1]));
-  //   }
-  // }
-
   if (data.profile.avatarUrl === '') {
     elImage.src = 'images/placeholder-image-square.jpg';
   }
