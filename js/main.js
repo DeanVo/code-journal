@@ -4,7 +4,7 @@ var elBio = document.querySelector('textarea');
 var elProfileForm = document.querySelector('#profile-form');
 var elEntriesForm = document.querySelector('#entries-form');
 var elImage = document.querySelector('.avatar-placeholder');
-var elPhotoUrl = document.querySelector('.entries-placeholder');
+var elPhotoUrl = document.querySelector('.entries-form-placeholder');
 var elPhotoUrlInput = document.querySelector('#photo-url');
 var elNotes = document.querySelector('#notes');
 
@@ -35,6 +35,7 @@ function saveButton() {
 }
 
 elProfileForm.addEventListener('submit', saveButton);
+var $entriesList = document.querySelector('.entries-list');
 
 function entriesSaveButton() {
   var entriesObject = {};
@@ -45,10 +46,11 @@ function entriesSaveButton() {
   entriesObject.notes = elNotes.value;
 
   data.entries.push(entriesObject);
-  elEntriesForm.reset();
+  $entriesList.prepend(renderEntriesData(entriesObject));
   elPhotoUrl.src = 'images/placeholder-image-square.jpg';
-  viewSwapper('entries');
 
+  viewSwapper('entries');
+  elEntriesForm.reset();
 }
 
 elEntriesForm.addEventListener('submit', entriesSaveButton);
@@ -135,41 +137,6 @@ function renderProfileData() {
   return newProfile;
 }
 
-function renderEntriesData() {
-  var entriesList = document.createElement('li');
-  var entriesContainer = document.createElement('div');
-  var entriesRow = document.createElement('div');
-  var entriesColumnHalf = document.createElement('div');
-  var entriesImage = document.createElement('img');
-  var entriesColumnHalf2 = document.createElement('div');
-  var entriesHeader = document.createElement('h1');
-  var entriesCaption = document.createElement('div');
-
-  entriesContainer.setAttribute('class', 'entries-container');
-  entriesRow.setAttribute('class', 'row');
-  entriesColumnHalf.setAttribute('class', 'column-half');
-  entriesImage.setAttribute('class', 'entries-placeholder');
-  entriesImage.setAttribute('src', data.entries[0].photoUrl);
-  entriesImage.setAttribute('alt', 'placeholder');
-  entriesColumnHalf2.setAttribute('class', 'column-half');
-
-  entriesHeader.textContent = data.entries[0].title;
-  entriesCaption.textContent = data.entries[0].notes;
-
-  entriesList.appendChild(entriesContainer);
-  entriesContainer.appendChild(entriesRow);
-  entriesRow.appendChild(entriesColumnHalf);
-  entriesRow.appendChild(entriesColumnHalf2);
-
-  entriesColumnHalf.appendChild(entriesImage);
-  entriesColumnHalf2.appendChild(entriesHeader);
-  entriesColumnHalf2.appendChild(entriesCaption);
-
-  return entriesList;
-}
-
-renderEntriesData();
-
 var viewList = document.querySelectorAll('div[data-view]');
 var profileDiv = document.querySelector('div[data-view="profile"');
 
@@ -196,6 +163,14 @@ function viewSwapper(dataView) {
     elBio.value = data.profile.bio;
   }
 
+  // if (data.view === 'create-entry') {
+  //   if (data.entries.length === 0) {
+  //     $entriesList.appendChild(renderEntriesData(data.entries[0]));
+  //   } else {
+  //     $entriesList.prepend(renderEntriesData(data.entries[data.entries.length - 1]));
+  //   }
+  // }
+
   if (data.profile.avatarUrl === '') {
     elImage.src = 'images/placeholder-image-square.jpg';
   }
@@ -213,6 +188,12 @@ document.addEventListener('DOMContentLoaded', function (event) {
   } else {
     viewSwapper(data.view);
   }
+
+  if (data.view === 'entries') {
+    for (var i = 0; i < data.entries.length; i++) {
+      $entriesList.prepend(renderEntriesData(data.entries[i]));
+    }
+  }
 });
 
 function clickEdit() {
@@ -228,3 +209,37 @@ function clickEdit() {
 }
 
 document.addEventListener('click', clickEdit);
+
+function renderEntriesData(entry) {
+  var $entriesContainer = document.createElement('div');
+  $entriesContainer.setAttribute('class', 'entries-container');
+
+  var $newRow = document.createElement('div');
+  $newRow.setAttribute('class', 'row padding-bottom');
+
+  var $newColumnHalf = document.createElement('div');
+  $newColumnHalf.setAttribute('class', 'column-half');
+
+  var $entriesImg = document.createElement('img');
+  $entriesImg.setAttribute('class', 'entries-placeholder');
+  $entriesImg.setAttribute('src', entry.photoUrl);
+  $entriesImg.setAttribute('alt', 'placeholder');
+
+  var $newColumnHalf2 = document.createElement('div');
+  $newColumnHalf2.setAttribute('class', 'column-half');
+
+  var $newHeader = document.createElement('h1');
+  $newHeader.textContent = entry.title;
+
+  var $newNotes = document.createElement('div');
+  $newNotes.textContent = entry.notes;
+
+  $entriesContainer.appendChild($newRow);
+  $newRow.appendChild($newColumnHalf);
+  $newRow.appendChild($newColumnHalf2);
+  $newColumnHalf.appendChild($entriesImg);
+  $newColumnHalf2.appendChild($newHeader);
+  $newColumnHalf2.appendChild($newNotes);
+
+  return $entriesContainer;
+}
