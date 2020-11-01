@@ -235,5 +235,3 @@ function renderEntriesData(entry) {
 
   return $entriesContainer;
 }
-
-// git test
